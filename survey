@@ -1,0 +1,51 @@
+def is_animal_model_essential():
+    """
+    Determines whether using an animal model is essential for a research project
+    based on a series of questions and criteria.
+    """
+    print("Welcome to the Animal Model Assessment Tool\n")
+    print("Answer the following questions to assess the necessity of using animal models in your research.")
+    
+    # Step 1: Define Research Goals
+    goal = input("1. Is your research focused on studying systemic interactions (e.g., organ systems or whole-body responses)? (yes/no): ").strip().lower()
+    if goal == "yes":
+        print("Animal models may be needed for studying complex, systemic biological responses.")
+    else:
+        print("Non-animal alternatives might suffice for cell-based or in-vitro studies.")
+    
+    # Step 2: Consider Alternatives
+    alternative = input("2. Have you explored alternatives like organoids, computational models, or in-vitro experiments? (yes/no): ").strip().lower()
+    if alternative == "no":
+        print("You should consider investigating non-animal alternatives before proceeding with animal models.")
+    
+    # Step 3: Ethical Considerations
+    ethical = input("3. Can your research question be answered without harming animals? (yes/no): ").strip().lower()
+    if ethical == "yes":
+        print("Using non-animal methods is encouraged to align with the 3Rs principles (Replace, Reduce, Refine).")
+    else:
+        print("Consider the ethical implications carefully and justify the need for animal use in your research.")
+
+    # Step 4: Regulatory Requirements
+    regulatory = input("4. Is the use of animal models required by regulatory agencies (e.g., FDA, EMA)? (yes/no): ").strip().lower()
+    if regulatory == "yes":
+        print("Animal testing may be required to meet regulatory standards.")
+    else:
+        print("If not required, consider focusing on validated alternatives.")
+
+    # Step 5: Feasibility and Funding
+    funding = input("5. Do you have access to funding and infrastructure for animal studies? (yes/no): ").strip().lower()
+    if funding == "no":
+        print("Lack of funding or resources might make animal models impractical. Explore cost-effective alternatives.")
+    
+    # Final Recommendation
+    print("\nFinal Assessment:")
+    if goal == "yes" and regulatory == "yes" and ethical == "no" and funding == "yes":
+        print("Using an animal model seems essential for your research based on your responses.")
+    else:
+        print("Consider prioritizing non-animal alternatives, refining your methods, or re-evaluating your research approach.")
+
+    print("\nThank you for using the Animal Model Assessment Tool.")
+
+# Run the program
+if __name__ == "__main__":
+    is_animal_model_essential()
